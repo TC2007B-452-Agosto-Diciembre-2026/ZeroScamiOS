@@ -1,0 +1,11 @@
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+*.xcresult
+
+# macOS
+.DS_Store
+
+# Estado de ejecución de agentes
+.superpowers/
