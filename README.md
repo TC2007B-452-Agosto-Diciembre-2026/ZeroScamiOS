@@ -22,7 +22,7 @@ Owner moderan los reportes desde la misma app.
 ## Requisitos
 
 - macOS con **Xcode 26.5** o más reciente.
-- Simulador o dispositivo con **iOS 26.5** (iPhone o iPad).
+- Simulador o dispositivo con **iOS 17 o superior** (iPhone o iPad). Las pruebas se corren en el simulador de iOS 26.5.
 
 ## Cómo correrla
 
