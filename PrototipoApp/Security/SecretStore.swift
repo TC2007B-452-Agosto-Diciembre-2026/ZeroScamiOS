@@ -9,7 +9,6 @@
 
 import Foundation
 import Security
-import Synchronization
 
 nonisolated enum ClaveSecreta: String, Sendable, CaseIterable {
     case accessToken = "access_token"
