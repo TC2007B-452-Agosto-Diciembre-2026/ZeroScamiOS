@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Synchronization
 import Testing
 @testable import PrototipoApp
 

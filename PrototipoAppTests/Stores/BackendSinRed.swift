@@ -9,7 +9,6 @@
 //
 
 import Foundation
-import Synchronization
 @testable import PrototipoApp
 
 nonisolated final class Cable: Sendable {

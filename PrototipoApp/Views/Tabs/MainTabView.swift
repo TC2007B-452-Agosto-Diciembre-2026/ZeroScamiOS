@@ -18,19 +18,20 @@ struct MainTabView: View {
     var body: some View {
         @Bindable var appState = appState
 
+        // `tabItem` y no `Tab { }`: `Tab` pide iOS 18 y la app debe instalarse desde iOS 17 (RNF03).
         TabView(selection: $appState.selectedTab) {
-            Tab("Inicio", systemImage: "house.fill", value: AppTab.home) {
-                TabStack(path: $appState.homePath) { HomeView() }
-            }
-            Tab("Buscar", systemImage: "magnifyingglass", value: AppTab.search) {
-                TabStack(path: $appState.searchPath) { SearchView() }
-            }
-            Tab("Reportar", systemImage: "megaphone.fill", value: AppTab.report) {
-                TabStack(path: $appState.reportPath) { ReportView() }
-            }
-            Tab("Perfil", systemImage: "person.fill", value: AppTab.profile) {
-                TabStack(path: $appState.profilePath) { ProfileView() }
-            }
+            TabStack(path: $appState.homePath) { HomeView() }
+                .tabItem { Label("Inicio", systemImage: "house.fill") }
+                .tag(AppTab.home)
+            TabStack(path: $appState.searchPath) { SearchView() }
+                .tabItem { Label("Buscar", systemImage: "magnifyingglass") }
+                .tag(AppTab.search)
+            TabStack(path: $appState.reportPath) { ReportView() }
+                .tabItem { Label("Reportar", systemImage: "megaphone.fill") }
+                .tag(AppTab.report)
+            TabStack(path: $appState.profilePath) { ProfileView() }
+                .tabItem { Label("Perfil", systemImage: "person.fill") }
+                .tag(AppTab.profile)
         }
         // La campana se actualiza al entrar, tras cada cambio y al volver a primer plano.
         .task(id: reports.version) { await cargarNotificaciones() }
